@@ -51,12 +51,12 @@ async def start(bot, update):
                                 
 🌶 <b>Powered by</b>:
 ◈ <code>Single Developers Logo Creator API</code>
-◈ <code>TroJanzHex Image editor</code>
-◈ <code>Dᴀᴍᴀɴᴛʜᴀ Jᴀsɪɴɢʜᴇ Random Logo Api</code>
+◈ <code>Logo Generator Bot</code>
+◈ <code>Gaming Lasith Random Logo Api</code>
 
 📊 <b>Users</b> : {total_users}
 
-©2021<a href=\"https://t.me/szteambots\"> sz Team Bots <sz/>✌️</a> 💐
+©2021<a href=\"https://t.me/GL89X"> GL89X </a> 💐
 """
     await update.reply_photo(
                     photo=(random.choice(START_IMG)),
@@ -65,7 +65,7 @@ async def start(bot, update):
                     parse_mode="Html")
 
     
-@sz.on_message(filters.command(["start", f"start@szimagebot"]) & ~filters.private & ~filters.channel)
+@sz.on_message(filters.command(["start", f"start@TheLogoGeneratorBot"]) & ~filters.private & ~filters.channel)
 async def gstart(bot, update):
     await AddUserToDatabase(bot, update)
     FSub = await ForceSub(bot, update)
@@ -77,7 +77,7 @@ async def gstart(bot, update):
                     parse_mode="Html",
                     disable_web_page_preview=True)
 
-@sz.on_message(filters.command(["help", f"help@szimagebot"]))
+@sz.on_message(filters.command(["help", f"help@TheLogoGeneratorBot"]))
 async def help(bot, update):
     await AddUserToDatabase(bot, update)
     FSub = await ForceSub(bot, update)
@@ -89,7 +89,7 @@ async def help(bot, update):
         disable_web_page_preview=True,
         reply_markup=CLOSE_BTN) 
 
-@sz.on_message(filters.command(["about", f"about@szimagebot"]))
+@sz.on_message(filters.command(["about", f"about@TheLogoGeneratorBot"]))
 async def about(bot, update):
     await AddUserToDatabase(bot, update)
     FSub = await ForceSub(bot, update)
@@ -117,12 +117,12 @@ async def show_status_count(_, bot: Message):
     disk_usage = psutil.disk_usage('/').percent
     total_users = await db.total_users_count()
     await bot.reply_text(
-        text=f"**💽 Tᴏᴛᴇʟ Dɪꜱᴋ Sᴘᴀᴄᴇ:** {total} \n**💿 Uꜱᴇᴅ Sᴘᴀᴄᴇ:** `{used}({disk_usage}%)` \n**📊 Fʀᴇᴇ Sᴘᴀᴄᴇ:** `{free}` \n**Cᴘᴜ Uꜱᴀɢᴇ:** `{cpu_usage}%` \n**Rᴀᴍ Uꜱᴀɢᴇ:** `{ram_usage}%` \n\n**Tᴏᴛᴀʟ Uꜱᴇʀꜱ 👀:** `{total_users}`\n\n**@szimagebot 🤖**",
+        text=f"**💽 Tᴏᴛᴇʟ Dɪꜱᴋ Sᴘᴀᴄᴇ:** {total} \n**💿 Uꜱᴇᴅ Sᴘᴀᴄᴇ:** `{used}({disk_usage}%)` \n**📊 Fʀᴇᴇ Sᴘᴀᴄᴇ:** `{free}` \n**Cᴘᴜ Uꜱᴀɢᴇ:** `{cpu_usage}%` \n**Rᴀᴍ Uꜱᴀɢᴇ:** `{ram_usage}%` \n\n**Tᴏᴛᴀʟ Uꜱᴇʀꜱ 👀:** `{total_users}`\n\n**@TheLogoGeneratorBot 🤖**",
         parse_mode="Markdown",
         quote=True
     )       
     
-@sz.on_message(filters.command(["ping", f"ping@szimagebot"]))
+@sz.on_message(filters.command(["ping", f"ping@TheLogoGeneratorBot"]))
 async def ping(bot, update):
     await AddUserToDatabase(bot, update)
     FSub = await ForceSub(bot, update)
@@ -137,13 +137,14 @@ async def ping(bot, update):
 sz.start()
 tele.start(bot_token=BOT_TOKEN)
 LOGGER.info("""
-   _____ ______  ____        _       
-  / ____|___  / |  _ \      | |      
- | (___    / /  | |_) | ___ | |_ ___ 
-  \___ \  / /   |  _ < / _ \| __/ __|
-  ____) |/ /__  | |_) | (_) | |_\__ |
- |_____//_____| |____/ \___/ \__|___/
+
+░██████╗░██╗░░░░░░█████╗░░█████╗░██╗░░██╗
+██╔════╝░██║░░░░░██╔══██╗██╔══██╗╚██╗██╔╝
+██║░░██╗░██║░░░░░╚█████╔╝╚██████║░╚███╔╝░
+██║░░╚██╗██║░░░░░██╔══██╗░╚═══██║░██╔██╗░
+╚██████╔╝███████╗╚█████╔╝░█████╔╝██╔╝╚██╗
+░╚═════╝░╚══════╝░╚════╝░░╚════╝░╚═╝░░╚═╝
                                      
-© This bot was created by SZ Bots and If you've clone this, you must keep this notice.                                     
+© @GL89X                                     
 """)
 idle()
